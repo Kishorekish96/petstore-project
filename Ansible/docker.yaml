@@ -14,7 +14,7 @@
 
     - name: Build and Push Docker image
       community.docker.docker_image:
-        name: "kishorekish96/petstore"
+        name: "kishorekish96/petstore-project"
         tag: latest
         build:
           path: /var/lib/jenkins/workspace/petstore
@@ -24,7 +24,7 @@
     - name: Run Petstore container
       community.docker.docker_container:
         name: pet1
-        image: "kishorekish96/petstore:latest"
+        image: "kishorekish96/petstore-project:latest"
         state: started
         restart_policy: always
         published_ports:
